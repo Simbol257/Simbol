@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RPS Game</title>
+<style type="text/css">
+body{
+background-color:#666;
+}
+nav{
+display:flex;
+position:space-between;
+background-color:#000;
+color:#fff;
+height:100px;
+justify-content:space-between;
+}
+.logo{
+width:80px;
+height:auto;
+border:2px solid black;
+border-radius:50%;
+}
+ul{
+list-style:none;
+display:flex;
+margin:20px;
+padding:20px;
+}
+a{
+text-decoration:none;
+color:#fff;
+border:1px solid white;
+border-radius:6px;
+font-size:20px;
+padding:10px;
+margin:10px;
+}
+.nav1{
+display:flex;
+align-content:center;
+}
+a:hover{
+color:black;
+border:1px solid #fff;
+background-color:white;
+border-radius:6px;
+transition-delay:0.5s;
+}
+.body{
+background-color:#000;
+color:white;
+margin:20px;
+}
+h1{
+text-align:center;
+color:#eee;
+}
+input{
+width:35px;
+height:35px;
+}
+#submit{
+display:block;
+margin-left:auto;
+margin-right:auto;
+width:150px;
+height:60px;
+font-size:24px;
+border:3px;
+border-radius:12px;
+Background-color:#1111f9;
+color:white;
+}
+#result{
+font-size:30px;
+}
+.intro{
+font-size:30px;
+text-align:center;
+}
+.flex{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+i{
+margin:20px;
+font-size:96px;
+}
+p{
+font-size:12px;
+text-align:center;
+}
+</style>
+<script type="text/javascript">
+var playerChoice;
+var computerChoiceIcon;
+var computerChoice;
+var h2="<h2>VS</h2>"
+var result;
+// Create an array of the possible choices
+var choices = ['rock', 'paper', 'scissors'];
+var icons = ["<i class='fa-solid fa-hand-back-fist'><p>Rock</p></i>","<i class='fa-solid fa-hand' id='paper'><p>Paper</p></i>","<i class='fa-solid fa-hand-scissors'><p>Scissors</p></i>"]
+// Generate a random number to represent the computer's choice
+var computerChoiceNumber = Math.floor(Math.random() * 3);
+
+// Use the random number to get the computer's choice from the array
+var computerChoice = choices[computerChoiceNumber];
+ var computerChoiceIcon = icons[computerChoiceNumber];
+// Compare the player's choice and the computer's choice to determine the winner
+function display(computerChoiceIcon,result){
+document.getElementById("processHeading").innerHTML=h2;
+document.getElementById("process").innerHTML=computerChoiceIcon;
+document.getElementById("result").innerHTML=result;
+}
+function playGame(playerChoice) {
+  // This function plays a single round of rock paper scissors
+
+
+  if (playerChoice === computerChoice) {
+    // It's a tie!
+     result =  'It\'s a tie!Simbol chose:'+computerChoice;
+  } else if (playerChoice === 'rock') {
+    if (computerChoice === 'paper') {
+      // Paper beats rock, so the computer wins
+       result =  'You lost!Simbol chose:'+computerChoice;
+    } else {
+      // Rock beats scissors, so the player wins
+      result =  'You won!Simbol chose:'+computerChoice;
+    }
+  } else if (playerChoice === 'paper') {
+    if (computerChoice === 'scissors') {
+      // Scissors beats paper, so the computer wins
+      result =  'You lost!Simbol chose:'+computerChoice;
+    } else {
+      // Paper beats rock, so the player wins
+      result =  'You won!Simbol chose:'+computerChoice;
+    }
+  } else if (playerChoice === 'scissors') {
+    if (computerChoice === 'rock') {
+      // Rock beats scissors, so the computer wins
+      result =  'You lost!Simbol chose:'+computerChoice;
+    } else {
+      // Scissors beats paper, so the player wins
+      result =  'You won!Simbol chose:'+computerChoice;
+    }
+  }
+  return 0;
+}
+function f1() {
+ playerChoice="rock";
+ document.getElementById("paper").remove();
+ document.getElementById("scissors").remove();
+ playGame(playerChoice)
+  display(computerChoiceIcon,result)
+  }
+  function f2() {
+  playerChoice="paper";
+  document.getElementById("rock").remove();
+  document.getElementById("scissors").remove();
+ playGame(playerChoice)
+  display(computerChoiceIcon,result)
+  }
+  function f3() {
+  playerChoice="scissors";
+  document.getElementById("paper").remove();
+  document.getElementById("rock").remove();
+  playGame(playerChoice)
+  display(computerChoiceIcon,result)
+  
+  }
+</script>
+</head>
+<body>
+<script src="https://kit.fontawesome.com/0d018f338f.js" crossorigin="anonymous">
+</script>
+
+<nav>
+<div class="nav1">
+<img src="https://i.ytimg.com/vi/KTdvgp1f3g4/maxresdefault.jpg" class="logo">
+</div>
+<div class="nav2">
+<ul>
+<li><a href="index.html" >HOME</a></li>
+<li><a href="#" >ABOUT</a></li>
+<li><a href="#" >CONTACT</a></li>
+</ul>
+</div>
+<div class="nav1">
+<img src="https://cdn.myanimelist.net/images/characters/6/338843.webp" class="logo">
+</div>
+</nav>
+<h1 id="heading">RPS Game</h1>
+<p class="intro">Play against Simbol!Choose your move:</p>
+<div class="flex">
+<i class="fa-solid fa-hand-back-fist" id="rock" onclick="f1()"><p>Rock</p></i>
+<i class="fa-solid fa-hand" id="paper" onclick="f2()"><p>Paper</p></i>
+<i class="fa-solid fa-hand-scissors" id="scissors" onclick="f3()"><p>Scissors</p></i>
+</div>
+<div id="processHeading" class="flex">
+</div>
+<div id="process" class="flex">
+</div>
+<div id="result" class="flex">
+</div>
+<hr><br>
+<a href="rps.html" >Reset</a>
+</body>
+</html>

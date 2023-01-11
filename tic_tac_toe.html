@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tic Tac Toe</title>
+<style type="text/css">
+body{
+background-color:#666;
+}
+nav{
+display:flex;
+position:space-between;
+background-color:#000;
+color:#fff;
+height:100px;
+justify-content:space-between;
+}
+.logo{
+width:80px;
+height:auto;
+border:2px solid black;
+border-radius:50%;
+}
+ul{
+list-style:none;
+display:flex;
+margin:20px;
+padding:20px;
+}
+a{
+text-decoration:none;
+color:#fff;
+border:1px solid white;
+border-radius:6px;
+font-size:20px;
+padding:10px;
+margin:10px;
+}
+.nav1{
+display:flex;
+align-content:center;
+}
+a:hover{
+color:black;
+border:1px solid #fff;
+background-color:white;
+border-radius:6px;
+transition-delay:0.5s;
+}
+.body{
+background-color:#000;
+color:white;
+margin:20px;
+}
+h1{
+text-align:center;
+color:white;
+}
+ol{
+display:flex;
+list-style:none;
+
+padding:10px;
+border:2px solid white;
+height:60px;
+align-content:center;
+justify-content:center;
+}
+ol li{
+margin:20px
+}
+.intro{
+border:2px solid white;
+padding:20px;
+}
+.toc{
+border:2px solid white;
+padding:20px;
+}
+.about{
+border:2px solid white;
+}
+.contact{
+border:2px solid white;
+}
+}
+.flex{
+display:flex;
+}
+.flexrow{
+display:flex;
+flex-direction:row;
+}
+.flexcol{
+display:flex;
+flex-direction:column;
+}
+.cell{
+border:2px solid black;
+width:100px;
+height:100px;
+text-align:center;
+font-size:75px;
+}
+#row{
+justify-content:center;
+align-items:center;
+}
+#board{
+margin:50px;
+}
+.bt{
+border-top:0;
+}
+.bl{
+border-left:0;
+}
+.br{
+border-right:0;
+}
+.bb{
+border-bottom:0;
+}
+h1,h2{
+text-align:center;
+}
+#warn{
+text-align:center;
+font-color:red;
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav1">
+<img src="https://i.ytimg.com/vi/KTdvgp1f3g4/maxresdefault.jpg" class="logo">
+</div>
+<div class="nav2">
+<ul>
+<li><a href="index.html" >HOME</a></li>
+<li><a href="#about" >ABOUT</a></li>
+<li><a href="#contact" >CONTACT</a></li>
+</ul>
+</div>
+<div class="nav1">
+<img src="https://cdn.myanimelist.net/images/characters/6/338843.webp" class="logo">
+</div>
+</nav>
+<h1>Tic Tac Toe</h1>
+<h2 id="currentTurn">Current Turn:X</h2>
+<h2 id="warn"></h2>
+<div id="board" class="flex">
+<div id="row" class="flexrow">
+<div id="cell1" class="cell bt bl" onclick="id='cell1';index=0;checkempty(index,id);"></div>
+<div id="cell2" class="cell bt" onclick="id='cell2';index=1;checkempty(index,id);"></div>
+<div id="cell3" class="cell bt br" onclick="id='cell3';index=2;checkempty(index,id);"></div>
+</div>
+<div id="row" class="flexrow">
+<div id="cell4" class="cell bl" onclick="id='cell4';index=3;checkempty(index,id);"></div>
+<div id="cell5" class="cell cell5" onclick="id='cell5';index=4;checkempty(index,id);"></div>
+<div id="cell6" class="cell br" onclick="id='cell6';index=5;checkempty(index,id);"></div>
+</div>
+<div id="row" class="flexrow">
+<div id="cell7" class="cell bb bl" onclick="id='cell7';index=6;checkempty(index,id);"></div>
+<div id="cell8" class="cell bb" onclick="id='cell8';index=7;checkempty(index,id);"></div>
+<div id="cell9" class="cell bb br" onclick="id='cell9';index=8;checkempty(index,id);"></div>
+</div>
+<hr><br>
+<a href="tic_tac_toe.html" >Reset</a>
+</div>
+<h1 id="win"></h1>
+<script type="text/javascript">
+var c=0
+var turn;
+var rem;
+var result;
+var board=[document.getElementById("cell1").innerHTML,
+document.getElementById("cell2").innerHTML,
+document.getElementById("cell3").innerHTML,
+document.getElementById("cell4").innerHTML,
+document.getElementById("cell5").innerHTML,
+document.getElementById("cell6").innerHTML,
+document.getElementById("cell7").innerHTML,
+document.getElementById("cell8").innerHTML,
+document.getElementById("cell9").innerHTML,]
+function checkempty(index,id){
+if(result){
+return 0
+}
+if(board[index]===""){
+changeTurn()
+document.getElementById(id).innerHTML=turn
+board[index]=turn
+document.getElementById("warn").innerHTML=""
+result=checkwin(board,index)
+if(result){
+document.getElementById("win").innerHTML="The winner is:"+turn
+}
+}
+else{
+document.getElementById("warn").innerHTML="That cell is occupied!"
+}
+}
+//0 1 2
+//3 4 5
+//6 7 8
+function checkwin(board,index){
+if(c==9){
+document.getElementById("win").innerHTML="Its a draw"
+return 0
+}
+if((board[0]===board[1] && board[1]===board[2]) && (board[0]!=="")){
+return true
+}
+else if(board[3]===board[4] && board[4]===board[5] && (board[3]!=="")){
+return true
+}
+else if(board[6]===board[7] && board[7]===board[8] && (board[6]!=="")){
+return true
+}
+else if(board[0]===board[3] && board[3]===board[6] && (board[0]!=="")){
+return true
+}
+else if(board[1]===board[4] && board[4]===board[7] && (board[1]!=="")){
+return true
+}
+else if(board[2]===board[5] && board[5]===board[8] && (board[2]!=="")){
+return true
+}
+else if(board[0]===board[4] && board[4]===board[8] && (board[0]!=="")){
+return true
+}
+else if(board[2]===board[4] && board[4]===board[6] && (board[2]!=="")){
+return true
+}
+else{
+return false
+}
+}
+function changeTurn(){
+ rem=c%2
+ c+=1
+if(rem==0){
+turn="X"
+document.getElementById("currentTurn").innerHTML="Current Turn:O"
+}
+else{
+turn="O"
+document.getElementById("currentTurn").innerHTML="Current Turn:X"
+}
+}
+</script>
+</body>
+</html>
