@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simbol | Web Developer</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style type="text/css">
+
+
+*{
+margin:0;
+padding:0;
+font-size:inherit;
+font-family: 'Montserrat', sans-serif;
+color:inherit;
+text-decoration:none;
+
+}
+h1{
+font-size:60px;
+}
+h2{
+font-size:52px;
+}
+h3{
+font-size:44px;
+}
+h4{
+font-size:32px;
+}
+h5{
+font-size:30px;
+}
+p, a{
+font-size:22px;
+}
+p, h1, h2, h3, h4, h5, h6, a, button{
+margin:6px 12px;
+padding:6px 12px;
+}
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#050538;
+color:#e4e4e4;
+}
+nav a{
+padding:0;
+margin:0;
+}
+#side-nav{
+width:70vw;
+height:100vh;
+background:#030306;
+position:fixed;
+top:0;
+left:-70vw;
+z-index:5555;
+transition:all 1.4s;
+color:white;
+}
+#nav-menu a{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+margin:0 auto;
+}
+#nav-menu a>*{
+margin:14px 6px;
+padding:0;
+}
+#close-btn{
+display:flex;
+flex-direction:row-reverse;
+}
+.material-icons{
+font-size:50px;
+color:white;
+margin:14px 6px;
+width:50px;
+height:50px;
+}
+.profile{
+background:#ebebeb;
+overflow-x:visible;
+}
+.profile--img{
+width:60vw;
+height:60vw;
+border:14px solid white;
+border-radius:50%;
+background:url("naruto.png");
+background-position:-3vw top;
+background-repeat:no-repeat;
+background-size:cover;
+background-color:#dbdbdb;
+display:block;
+margin:0 auto;
+position:relative;
+top:140px;
+z-index:555;
+}
+.bio{
+padding:200px 0 140px 0;
+text-align:center;
+}
+.bio a{
+padding:0px;
+border-bottom:3px solid black;
+}
+.bio h1:nth-child(1) {
+font-weight:300;
+}
+.bio h1:nth-child(2) {
+font-weight:700;
+}
+main div{
+display:block;
+padding:0 5vw;
+margin:5vh 0;
+}
+main img{
+display:block;
+width:90vw;
+height:60vw;
+margin-top:4vh;
+z-index:-55;
+}
+main div h2{
+display:inline;
+padding:0;
+margin:0;
+}
+main div h2:nth-child(1){
+font-weight:200;
+}
+main div h2:nth-child(2){
+font-weight:800;
+}
+.overlay{
+width:inherit;
+height:500px;
+background:#dbdbdb;
+position:relative;
+top:-200px;
+z-index:-20;
+}
+.more-btn{
+padding:10px 28px;
+font-size:16px;
+text-transform:uppercase;
+font-weight:300;
+}
+.overlay--btn{
+background:none;
+position:relative;
+top:-450px;
+z-index:555;
+border:2.7px solid black;
+margin:6px 5vw;
+}
+.about{
+margin:-150px 0 0 0;
+padding:0 0 120px 0;
+}
+.about h1{
+text-align:right;
+}
+.about h1:nth-child(1), .about h1:nth-child(2) {
+font-weight:200;
+}
+.about h1:nth-child(3){
+font-weight:800;
+}
+.about p{
+margin:80px 12px 30px 12px;
+}
+.about--btn{
+background:#ff9c33;
+color:white;
+font-weight:500;
+}
+.about hr{
+width:auto;
+height:10px;
+background:#444;
+display:block;
+margin:100px 12px 0 12px;
+}
+.skills{
+overflow-x:scroll;
+}
+.skills--h1{
+text-align:right;
+}
+.skills--h1 h1:nth-child(1){
+font-weight:200;
+}
+.skills--h1 h1:nth-child(2){
+font-weight:800;
+}
+.skills--div{
+display:flex;
+width:1700px;
+margin:60px 0;
+}
+.card{
+width:200px;
+margin:0 20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+background:#ebebeb;
+padding:20px 0;
+border-radius:24px;
+}
+.card--img{
+width:150px;
+height:150px;
+z-index:5555;
+}
+.card--h2{
+font-size:20px;
+}
+footer{
+background:#dedede;
+width:100vw;
+}
+.links{
+display:flex;
+padding:50px 12px;
+color:#222;
+}
+.links--div{
+display:flex;
+flex-direction:column;
+}
+.links h4{
+font-weight:500;
+}
+.links a{
+font-weight:300;
+margin:0 24px;
+}
+</style>
+
+
+
+</head>
+<body>
+
+
+<nav>
+<a href="/" ><h1>Simbol</h1></a>
+<div id="menu-btn" ><h1><span class="material-icons" >menu</span></h1></div>
+</nav>
+<div id="side-nav" >
+<div id="close-btn" ><h1><span class="material-icons" >close</span></h1></div>
+<div id="nav-menu">
+ <a href="#" ><span class="material-icons" >home</span><h4>Home</h4></a>
+ <a href="#" ><span class="material-icons" >info</span><h4>About</h4></a>
+ <a href="#" ><span class="material-icons" >dashboard</span><h4>Portfolio</h4></a>
+ <a href="#" ><span class="material-icons" >mail</span><h4>Contact Me</h4></a>
+</div>
+</div>
+
+
+<header>
+<div class="profile"  >
+<div class="profile--img" ></div>
+</div>
+<div class="bio" >
+<h1>SIMBOL</h1>
+<h1>WEB-DEVELOPER</h1>
+<p>Hello Everyone! I'm Simbol. Welcome to my Site. I'm a Science Student in grade XI. I'm currently in Nepal XD. Leave me some feedback on the Website. </p>
+<a href="#" class="bio--a" >Read More</a>
+</div>
+</header>
+
+
+
+<main>
+<div>
+<h2>I Like </h2><h2>Coding</h2>
+<img src="coding.jpg" >
+</div>
+<div>
+<h2>I Like </h2><h2>Anime</h2>
+<img src="anime.jpg" >
+</div>
+<div class="overlay" ></div>
+<a href="#" class="more-btn overlay--btn" >Read More</a>
+<div class="about" >
+<h1>I</h1><h1>Build</h1><h1>Websites</h1>
+<p>These are some of my projects:</p>
+<center><p>To be added.....</p></center>
+<a href="#" class="more-btn about--btn" >View More</a>
+<hr>
+</div>
+
+
+
+<div class="skills--h1" >
+<h1>My</h1><h1>Skills</h1>
+</div>
+<div class="skills" >
+<div class="skills--div" >
+<div class="card" ><img class="card--img"  src="html.png" ><h2 class="card--h2" >HTML</h2></div>
+<div class="card" ><img class="card--img"  src="css.png" ><h2 class="card--h2" >CSS</h2></div>
+<div class="card" ><img class="card--img"  src="javascript.png" ><h2 class="card--h2" >JavaScript</h2></div>
+<div class="card" ><img class="card--img"  src="tailwind.png" ><h2 class="card--h2" >Tailwind</h2></div>
+<div class="card" ><img class="card--img"  src="bootstrap.png" ><h2 class="card--h2" >Bootstrap</h2></div>
+<div class="card" ><img class="card--img"  src="jquery.png" ><h2 class="card--h2" >jQuery</h2></div>
+<div class="card" ><img class="card--img"  src="github.png" ><h2 class="card--h2" >GitHub</h2></div>
+</div>
+</div>
+</main>
+
+
+<footer>
+<div class="links" >
+<div class="links--div" >
+<h4>Socials</h4>
+<a href="https://www.instagram.com/simbol257/" >Instagram</a>
+<a href="https://t.me/Simbol257" >Telegram</a>
+<a href="https://www.tiktok.com/@__simbol__" >TikTok</a>
+</div>
+<div class="links--div" >
+<h4>Site Links</h4>
+<a href="" >Home</a>
+<a href="" >About</a>
+<a href="" >Contact Me</a>
+<a href="" >Portfolio</a>
+</div>
+</div>
+</footer>
+
+
+
+<script type="text/javascript">
+document.getElementById("menu-btn").addEventListener("click", function(){
+document.getElementById("side-nav").style.left = "0vw";
+})
+document.getElementById("close-btn").addEventListener("click", function(){
+document.getElementById("side-nav").style.left = "-70vw";
+})
+
+</script>
+</body>
+</html>
